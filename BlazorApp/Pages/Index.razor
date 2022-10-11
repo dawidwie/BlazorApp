@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+@using BlazorApp.Pages.ContactComp
+
+<ContactList contacts="contacts">
+    <NullContacts>
+        <span>Contacts are loading...(Index)</span>
+    </NullContacts>
+    <EmptyContacts>
+        <span>No contacts to display</span>
+    </EmptyContacts>
+</ContactList>
+
+<br />
+
+
+<MyTextbox @attributes="@MyTextboxAttributes"/>
+
+    

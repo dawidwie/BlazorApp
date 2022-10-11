@@ -1,0 +1,38 @@
+﻿<input type="checkbox" @bind="DisplayEmail" /><label>Display Email</label>
+<br />
+<br />
+
+@if(contacts is null)
+{
+    @NullContacts
+
+}
+else if(contacts.Count == 0)
+{
+    @EmptyContacts
+}
+else
+{
+    @foreach (var contact in contacts)
+    {
+        <ContactComponent1 CurrentContact="contact" DisplayEmail="@DisplayEmail" DeleteCurrentContact="DeleteContact" />
+    }
+}
+
+
+@code{
+    [Parameter]
+    public RenderFragment NullContacts { get; set; }
+
+    [Parameter]
+    public RenderFragment EmptyContacts { get; set; }
+
+    [Parameter]
+    public List<Contact> contacts { get; set; }
+    private bool DisplayEmail = true;
+    private void DeleteContact(Contact contact)
+    {
+        contacts.Remove(contact);
+    }
+
+}
