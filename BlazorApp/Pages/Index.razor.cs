@@ -40,7 +40,7 @@ namespace BlazorApp.Pages
                 Email = "patrick@gmail.com"
             }
         };
-            base.OnInitializedAsync();
+            await base.OnInitializedAsync();
         }
     }
 }

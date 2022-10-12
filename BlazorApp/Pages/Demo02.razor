@@ -1,0 +1,25 @@
+﻿@page "/demo02"
+@inject ContactService contactService
+<h3>Component1</h3>
+
+@if (contactService.ContactList.Count == 0)
+{
+    <b>No contacts to Display</b>
+}
+else
+{
+    @foreach (var contact in contactService.ContactList)
+    {
+        <b>@contact.FirstName @contact.LastName</b>
+        <br />
+        <i>@contact.Email</i>
+        <br />
+        <br />
+    }
+
+}
+<br />
+<br />
+
+<NavLink href="/demo01">demo01</NavLink>
+
